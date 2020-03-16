@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    user_data : []
+  }
+  getUser = () => {
+    const api_key = "RGAPI-85f78151-b164-4ed5-95a5-a3f2d15b4f8e";
+    const user_name = "hideonbush";
+    axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user_name}?api_key=${api_key}`
+    ).then(data => {
+      this.setState({user_data:data.data});
+    });
+  }
+  componentDidMount() {
+    this.getUser();
+  }
+  render() {
+    const data = this.state.user_data;
+    console.log(data);
+    return (
+      <section>
+        <form onSubmit={this.search}>
+          <input type="text" />
+          <button type="summit">검색</button>
+        </form>
+        <h1>{data.name}</h1>
+        <h2>{data.id}</h2>
+      </section>
+    );
+  }
 }
 
 export default App;
