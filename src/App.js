@@ -3,30 +3,38 @@ import axios from 'axios';
 
 class App extends React.Component {
   state = {
-    user_data : []
+    user_data : [],
+    user_name : ""
   }
-  getUser = () => {
-    const api_key = "RGAPI-85f78151-b164-4ed5-95a5-a3f2d15b4f8e";
-    const user_name = "hideonbush";
+  getUser = (e) => {
+    const api_key = "RGAPI-e2b0f447-a3f2-4d41-b9f0-8afae8fd0d07";
+    const user_name = this.state.user_name;
     axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user_name}?api_key=${api_key}`
     ).then(data => {
       this.setState({user_data:data.data});
     });
+    e.preventDefault();
   }
-  componentDidMount() {
-    this.getUser();
+  getName = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    });
   }
+  componentDidMount() {}
   render() {
     const data = this.state.user_data;
-    console.log(data);
     return (
       <section>
-        <form onSubmit={this.search}>
-          <input type="text" />
+        <form onSubmit={this.getUser}>
+          <input 
+            type="text" 
+            value={this.state.user_name}
+            name="user_name"
+            onChange={this.getName} />
           <button type="summit">검색</button>
+          <h1>{data.name}</h1>
+          <h2>{data.accountId}</h2>
         </form>
-        <h1>{data.name}</h1>
-        <h2>{data.id}</h2>
       </section>
     );
   }
