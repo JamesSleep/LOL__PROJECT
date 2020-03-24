@@ -1,28 +1,40 @@
 import React from 'react';
 import axios from 'axios';
+import {Summoner, League} from './search';
 
 class App extends React.Component {
   state = {
-    user_data : [],
-    user_name : ""
+    summoner_data : [],
+    league_data : [],
+    user_name : "",
+    is_search : false
   }
   getUser = (e) => {
-    const api_key = "RGAPI-e2b0f447-a3f2-4d41-b9f0-8afae8fd0d07";
+    /*
     const user_name = this.state.user_name;
-    axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user_name}?api_key=${api_key}`
-    ).then(data => {
-      this.setState({user_data:data.data});
+    const main_URL = "https://kr.api.riotgames.com/lol/";
+    const api_key = "RGAPI-e0f831f3-34a3-4695-92b6-e2389a5ddcd2";
+    axios.get(`${main_URL}summoner/v4/summoners/by-name/${user_name}?api_key=${api_key}`
+    ).then(search_data => {
+        this.setState({
+          summoner_data:search_data.data,
+          is_search:true
+        });
     });
+    */
+    this.setState({is_search:true});
     e.preventDefault();
   }
   getName = (e) => {
     this.setState({
       [e.target.name]:e.target.value
     });
+    
   }
-  componentDidMount() {}
   render() {
-    const data = this.state.user_data;
+    const data = this.state.summoner_data;
+    const is_search = this.state.is_search;
+    const name = this.setState.user_name;
     return (
       <section>
         <form onSubmit={this.getUser}>
@@ -32,9 +44,15 @@ class App extends React.Component {
             name="user_name"
             onChange={this.getName} />
           <button type="summit">검색</button>
-          <h1>{data.name}</h1>
-          <h2>{data.accountId}</h2>
         </form>
+        <div>
+          {is_search
+            ?
+            <Summoner name={name}/>
+            :
+            <h1>nothing</h1>
+          }
+        </div>
       </section>
     );
   }
