@@ -1,56 +1,73 @@
 import React from 'react';
 import axios from 'axios';
-import {Summoner, League} from './search';
+import State from './State';
+import './App.css';
 
 class App extends React.Component {
   state = {
-    summoner_data : [],
-    league_data : [],
     user_name : "",
+    summoner_data: [],
+    league_data:[],
     is_search : false
   }
   getUser = (e) => {
-    /*
-    const user_name = this.state.user_name;
     const main_URL = "https://kr.api.riotgames.com/lol/";
     const api_key = "RGAPI-e0f831f3-34a3-4695-92b6-e2389a5ddcd2";
+    const user_name = this.state.user_name;
+    let user_id;
     axios.get(`${main_URL}summoner/v4/summoners/by-name/${user_name}?api_key=${api_key}`
-    ).then(search_data => {
-        this.setState({
-          summoner_data:search_data.data,
-          is_search:true
+    ).then(summoner_v4 => {
+        
+        user_id = summoner_v4.data.id;
+        axios.get(`${main_URL}league/v4/entries/by-summoner/${user_id}?api_key=${api_key}`
+        ).then(league_v4 => {
+          this.setState({
+            summoner_data:summoner_v4.data,
+            league_data:league_v4.data[0],
+            is_search : true
+          });
         });
     });
-    */
-    this.setState({is_search:true});
     e.preventDefault();
   }
   getName = (e) => {
     this.setState({
-      [e.target.name]:e.target.value
+        [e.target.name]:e.target.value
     });
-    
   }
   render() {
-    const data = this.state.summoner_data;
-    const is_search = this.state.is_search;
-    const name = this.setState.user_name;
+    const summonerData = this.state.summoner_data;
+    const leagueData = this.state.league_data;
+    const isSearch = this.state.is_search;
     return (
       <section>
-        <form onSubmit={this.getUser}>
-          <input 
-            type="text" 
-            value={this.state.user_name}
-            name="user_name"
-            onChange={this.getName} />
-          <button type="summit">검색</button>
-        </form>
-        <div>
-          {is_search
-            ?
-            <Summoner name={name}/>
-            :
-            <h1>nothing</h1>
+        <header className ="header">
+          <div className="main_title">
+            <h1>LOLSEARCH</h1>
+          </div>
+          <div className="search_bar">
+            <form onSubmit={this.getUser}>
+                <input 
+                    type="text"
+                    value={this.state.user_name}
+                    name="user_name"
+                    onChange={this.getName} />
+                <button type="summit">검색</button>
+            </form>
+          </div>
+        </header>
+        <div className="summoner_state">
+          {
+            isSearch?
+            <State 
+            iconID = {summonerData.profileIconId}
+            summonerName = {summonerData.name}
+            tier = {leagueData.tier}
+            rank = {leagueData.rank}
+            win = {leagueData.wins}
+            lose = {leagueData.losses}
+            lp = {leagueData.leaguePoints} />
+            :null
           }
         </div>
       </section>
