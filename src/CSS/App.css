@@ -1,0 +1,27 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Open+Sans:400,600,700,800&display=swap');
+
+body {
+    background-image: url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section {
+    padding-top: 60px;
+    display: flex;
+}
+
+header {
+    height: 80px;
+}
+
+.summoner_info {
+    display: inline-block;
+    padding-left: 90px;
+}
+
+
+
+

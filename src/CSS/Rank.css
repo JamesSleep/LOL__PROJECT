@@ -1,0 +1,22 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Open+Sans:400,600,700,800&display=swap');
+
+.rank_info {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Jua', sans-serif;
+    border: whitesmoke;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.rank_info img {
+    width: 100px;
+    height: 100px;
+}
