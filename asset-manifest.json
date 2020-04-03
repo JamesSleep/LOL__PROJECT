@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/lol__project/static/css/main.f3b1673e.chunk.css",
+    "main.js": "/lol__project/static/js/main.bc1d2729.chunk.js",
+    "main.js.map": "/lol__project/static/js/main.bc1d2729.chunk.js.map",
+    "runtime-main.js": "/lol__project/static/js/runtime-main.e89395d5.js",
+    "runtime-main.js.map": "/lol__project/static/js/runtime-main.e89395d5.js.map",
+    "static/js/2.cbca8c80.chunk.js": "/lol__project/static/js/2.cbca8c80.chunk.js",
+    "static/js/2.cbca8c80.chunk.js.map": "/lol__project/static/js/2.cbca8c80.chunk.js.map",
+    "index.html": "/lol__project/index.html",
+    "precache-manifest.e9dac9727c884b76930fde19d53cb0c3.js": "/lol__project/precache-manifest.e9dac9727c884b76930fde19d53cb0c3.js",
+    "service-worker.js": "/lol__project/service-worker.js",
+    "static/css/main.f3b1673e.chunk.css.map": "/lol__project/static/css/main.f3b1673e.chunk.css.map",
+    "static/js/2.cbca8c80.chunk.js.LICENSE.txt": "/lol__project/static/js/2.cbca8c80.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e89395d5.js",
+    "static/js/2.cbca8c80.chunk.js",
+    "static/css/main.f3b1673e.chunk.css",
+    "static/js/main.bc1d2729.chunk.js"
+  ]
+}
