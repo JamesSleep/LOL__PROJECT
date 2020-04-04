@@ -2,6 +2,7 @@
   "name": "lol__project",
   "version": "0.1.0",
   "private": true,
+  "proxy" : "https://kr.api.riotgames.com",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
