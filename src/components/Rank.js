@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import '../CSS/Rank.css'
 
 function Rank({tier,rank,win,lose,lp}){
-    const rank_img = "/img/ranked-emblems/Emblem_"+tier+".png";
+    const rank_img = "/lol__project/img/ranked-emblems/Emblem_"+tier+".png";
     const title = tier + " " + rank;
     return (
         <div className="rank_info">

@@ -1,5 +1,9 @@
 @import './reset.css';
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR|Teko&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Teko&display=swap');
+
+header {
+    height: 80px;
+}
 
 .header_bar {
     background-color: black;

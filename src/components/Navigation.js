@@ -1,7 +1,7 @@
 import React from 'react';
 import '../CSS/Navigation.css'
 
-function Navigation({getData, getName, enterPress}) {
+function Navigation({getData ,getName, enterPress}) {
     return (
         <header>
           <div className="header_bar">
@@ -10,14 +10,15 @@ function Navigation({getData, getName, enterPress}) {
               <span className="title2">SEARCH</span>
             </div>
             <div className="menu_bar">
-              <ul className="menu">
-                <li>순위</li><li>통계</li>
-              </ul>
+              <div className="menu">
+                <span>순위</span>
+                <span>통계</span>
+              </div>
               <div className="search_bar">
                 <input type="text" onChange={getName} onKeyPress={enterPress} placeholder="소환사명.."/>
-                <button type="summit" onClick={getData} >
+                <button type="summit" onClick={getData}>
                   <i class="fas fa-search fa-2x"></i>
-                </button>
+                </button>            
               </div>
             </div>
           </div>
