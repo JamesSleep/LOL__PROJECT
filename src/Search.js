@@ -8,7 +8,7 @@ import './CSS/Search.css';
 
 
 const API_DATA = {
-  main_url : "http://james--sleep.herokuapp.com/api/",
+  main_url : "https://james--sleep.herokuapp.com/api/",
   api_key : "RGAPI-e0f831f3-34a3-4695-92b6-e2389a5ddcd2"
 }
 
