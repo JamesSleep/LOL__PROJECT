@@ -17,10 +17,11 @@ header {
 }
 
 .main_title {
-    font-size: 55px;
+    font-size: 60px;
     font-family: 'Teko', sans-serif;
     font-weight: 600;
     padding-left: 220px;
+    letter-spacing: 3px;
 }
 
 .main_title .title1 {
