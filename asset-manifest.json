@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lol__project/static/css/main.891cf471.chunk.css",
-    "main.js": "/lol__project/static/js/main.cca7bc68.chunk.js",
-    "main.js.map": "/lol__project/static/js/main.cca7bc68.chunk.js.map",
+    "main.js": "/lol__project/static/js/main.2652c529.chunk.js",
+    "main.js.map": "/lol__project/static/js/main.2652c529.chunk.js.map",
     "runtime-main.js": "/lol__project/static/js/runtime-main.62f361fe.js",
     "runtime-main.js.map": "/lol__project/static/js/runtime-main.62f361fe.js.map",
     "static/js/2.407c9bfd.chunk.js": "/lol__project/static/js/2.407c9bfd.chunk.js",
     "static/js/2.407c9bfd.chunk.js.map": "/lol__project/static/js/2.407c9bfd.chunk.js.map",
     "index.html": "/lol__project/index.html",
-    "precache-manifest.5e86795161eeef1930f0c97f811d1165.js": "/lol__project/precache-manifest.5e86795161eeef1930f0c97f811d1165.js",
+    "precache-manifest.58569c2143d14290c199ff20e91b3796.js": "/lol__project/precache-manifest.58569c2143d14290c199ff20e91b3796.js",
     "service-worker.js": "/lol__project/service-worker.js",
     "static/css/main.891cf471.chunk.css.map": "/lol__project/static/css/main.891cf471.chunk.css.map",
     "static/js/2.407c9bfd.chunk.js.LICENSE.txt": "/lol__project/static/js/2.407c9bfd.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.62f361fe.js",
     "static/js/2.407c9bfd.chunk.js",
     "static/css/main.891cf471.chunk.css",
-    "static/js/main.cca7bc68.chunk.js"
+    "static/js/main.2652c529.chunk.js"
   ]
 }
