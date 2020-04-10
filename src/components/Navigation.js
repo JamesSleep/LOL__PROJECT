@@ -7,7 +7,7 @@ function Navigation({getData ,getName, enterPress}) {
           <div className="header_bar">
             <div className="main_title">
               <span className="title1">LOL</span>
-              <span className="title2">SEARCH</span>
+              <span className="title2">GG</span>
             </div>
             <div className="menu_bar">
               <div className="menu">
