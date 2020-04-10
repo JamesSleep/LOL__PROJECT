@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Search from './Search';
-import Test from './Test';
+import Search from './Search';
 
-ReactDOM.render(<Test />, document.getElementById('root'));
+ReactDOM.render(<Search />, document.getElementById('root'));
 

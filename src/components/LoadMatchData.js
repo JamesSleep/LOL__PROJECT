@@ -4,7 +4,7 @@ import MatchInfo from './MatchInfo';
 import '../CSS/Match.css';
 
 const API_DATA = {
-    main_url : "https://kr.api.riotgames.com/lol/",
+    main_url : "http://james--sleep.herokuapp.com/api/",
     api_key : "RGAPI-e0f831f3-34a3-4695-92b6-e2389a5ddcd2"
   }
 
@@ -19,7 +19,7 @@ class LoadMatchData extends React.Component {
     getData = async () => {
         const {userName, gameId} = this.state;
         let userMatchData = [];
-        const matchData = await axios.get(`${API_DATA.main_url}match/v4/matches/${gameId}?api_key=${API_DATA.api_key}`);
+        const matchData = await axios.get(`${API_DATA.main_url}matches${gameId}`);
         for(let i in matchData.data.participantIdentities) {
             if(matchData.data.participantIdentities[i].player.summonerName === userName) {
                 userMatchData = matchData.data.participants[i];

@@ -11,14 +11,14 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "gh-pages": "^2.2.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "urlencode": "^1.1.0"
   },
   "scripts": {
-    "start": "node ApiServer.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
@@ -38,5 +38,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://JamesSleep.github.io/lol__project"
+  "homepage": "https://JamesSleep.github.io/lol__project",
+  "devDependencies": {
+    "@csstools/convert-colors": "^2.0.0"
+  }
 }

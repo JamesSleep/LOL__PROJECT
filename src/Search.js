@@ -8,7 +8,7 @@ import './CSS/Search.css';
 
 
 const API_DATA = {
-  main_url : "https://kr.api.riotgames.com/lol/",
+  main_url : "http://james--sleep.herokuapp.com/api/",
   api_key : "RGAPI-e0f831f3-34a3-4695-92b6-e2389a5ddcd2"
 }
 
@@ -21,9 +21,9 @@ class Search extends React.Component {
     isLoading: false
   }
   getData = async () => {
-    const summonerData = await axios.get(`${API_DATA.main_url}summoner/v4/summoners/by-name/${this.state.userName}?api_key=${API_DATA.api_key}`);
-    const leagueData = await axios.get(`${API_DATA.main_url}league/v4/entries/by-summoner/${summonerData.data.id}?api_key=${API_DATA.api_key}`);
-    const matchList = await axios.get(`${API_DATA.main_url}match/v4/matchlists/by-account/${summonerData.data.accountId}?queue=420&endIndex=10&beginIndex=0&api_key=${API_DATA.api_key}`);
+    const summonerData = await axios.get(`${API_DATA.main_url}summoner/${this.state.userName}`);
+    const leagueData = await axios.get(`${API_DATA.main_url}league/${summonerData.data.id}`);
+    const matchList = await axios.get(`${API_DATA.main_url}matchlist/${summonerData.data.accountId}`);
     this.setState({
       summonerData : summonerData.data,
       leagueData : leagueData.data[0],
