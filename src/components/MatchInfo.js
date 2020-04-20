@@ -131,7 +131,7 @@ function killStock(matchData, userMatchData) {
     return (userMatchData.stats.kills+userMatchData.stats.assists)/sum*100;
 }
 function getItemNums(userMatchData) {
-    let itemNums = new Array();
+    let itemNums = [];
     for(let i=0; i<3; i++) {
         itemNums[i] = userMatchData.stats["item"+String(i)];
     }

@@ -15,10 +15,10 @@ const API_DATA = {
 class Search extends React.Component {
   state = {
     userName : "",
-    summonerData: [],
-    leagueData: [],
-    matchList: [],
-    isLoading: false
+    summonerData : [],
+    leagueData : [],
+    matchList : [],
+    isLoading : false
   }
   getData = async () => {
     const summonerData = await axios.get(`${API_DATA.main_url}summoner/${this.state.userName}`);
@@ -37,34 +37,31 @@ class Search extends React.Component {
     });
   }
   enterPress = (e) => {
-    if (e.key === 'Enter') {
-      this.getData();
-    }
+    if (e.key === 'Enter') {  this.getData(); }
   }
   render() {
-    const {summonerData, leagueData, matchList, isLoading} = this.state;
+    const { summonerData, leagueData, matchList, isLoading } = this.state;
     return (
       <main>
         <Navigation 
           getData = {this.getData}
           getName = {this.getName}
           enterPress = {this.enterPress}/>
-        <section>
-          { isLoading?
+        { isLoading?
+          <section>
             <div className="summoner_info">
-            <UserInfo 
-            iconID = {summonerData.profileIconId}
-            summonerName = {summonerData.name}
-            level = {summonerData.summonerLevel} />
-            <Rank
-            tier = {leagueData.tier}
-            rank = {leagueData.rank}
-            win = {leagueData.wins}
-            lose = {leagueData.losses}
-            lp = {leagueData.leaguePoints} />
+              <UserInfo 
+              iconID = {summonerData.profileIconId}
+              summonerName = {summonerData.name}
+              level = {summonerData.summonerLevel} />
+              <Rank
+              tier = {leagueData.tier}
+              rank = {leagueData.rank}
+              win = {leagueData.wins}
+              lose = {leagueData.losses}
+              lp = {leagueData.leaguePoints} />
             </div>
-            :null }
-          <div className="match_list">
+            <div className="match_list">
             { 
               matchList.map(matches => (
                 <LoadMatchData
@@ -72,8 +69,10 @@ class Search extends React.Component {
                   id = {matches.gameId}
                   userName = {summonerData.name} />
             ))}
-          </div>
-        </section>
+            </div>
+          </section>
+          : null
+        }
       </main>
     );
   }
